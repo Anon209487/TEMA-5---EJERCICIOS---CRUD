@@ -23,7 +23,7 @@ public class Alumno {
 	}
 	
 	public String toString() {
-		String nombreYNota = "El nombre es : " + this.nombre+"La notaMedia es : "+this.notaMedia;
+		String nombreYNota = " El nombre es : " + this.nombre+" La notaMedia es : "+this.notaMedia;
 		return nombreYNota;
 
 	}
