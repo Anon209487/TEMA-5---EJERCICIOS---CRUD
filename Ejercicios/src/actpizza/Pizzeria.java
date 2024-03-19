@@ -1,4 +1,4 @@
- package actpizza;
+package actpizza;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -14,13 +14,10 @@ public class Pizzeria {
 		String[] tipo = { "Mediana ", "Familiar" };
 		int seleccion;
 		boolean salida = false;
-		System.out.print( " 1 Listado de pizzas \n 2 Pizza  \n 3 Pizza servida \n 4 Salir");
-
-		seleccion = myObj.nextInt();
 		while (salida == false) {
-			System.out.print( " 1 Listado de pizzas \n 2 Pizza  \n 3 Pizza servida \n 4 Salir");
+			System.out.print(" 1 Listado de pizzas \n 2 pedidio Pizza  \n 3 Pizza servida \n 4 Salir");
 			seleccion = myObj.nextInt();
-			
+
 			switch (seleccion) {
 			case 1:
 				ArrayPizzas.imprimirPizzas();
@@ -33,12 +30,12 @@ public class Pizzeria {
 				codigo = myObj.nextInt();
 				System.out.println(Arrays.toString(tamayo) + "SELECIONE TAMAÑO");
 				tamayoNumero = myObj.nextInt();
-				System.out.print(Arrays.toString(tipo) + "SELECIONE TYPO");
+				System.out.println(Arrays.toString(tamayo) + "SELECIONE TYPO");
 				tipoNumero = myObj.nextInt();
-				ArrayPizzas.nuevoPedido(codigo, tamayo[tamayoNumero], tipo[tipoNumero]);
+				ArrayPizzas.nuevoPedido(codigo, tipo[tipoNumero], tamayo[tamayoNumero]);
 				break;
 			case 3:
-		
+				ArrayPizzas.pedidoservido();
 				break;
 			case 4:
 				salida = true;

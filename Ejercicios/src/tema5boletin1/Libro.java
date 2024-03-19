@@ -6,10 +6,10 @@ package tema5boletin1;
 /**
  * 
  */
-public class act1 {
+public class Libro {
 
 
-	public class Libro {
+	
 		private String título;
 		private String autor;
 		private int ejemplares;
@@ -47,5 +47,5 @@ public class act1 {
 			System.out.print(mostrarDatoS);
 		}
 	}
-}
+
 
