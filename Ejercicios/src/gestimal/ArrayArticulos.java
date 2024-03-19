@@ -1,7 +1,7 @@
 package gestimal;
 
 import java.util.Arrays;
-
+ 
 public class ArrayArticulos {
 
 	static Articulos articulos[] = new Articulos[49];

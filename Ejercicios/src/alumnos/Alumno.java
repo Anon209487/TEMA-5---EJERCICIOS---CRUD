@@ -1,5 +1,5 @@
 package alumnos;
-
+ 
 /**
  * boletin 2 act 1
  */
