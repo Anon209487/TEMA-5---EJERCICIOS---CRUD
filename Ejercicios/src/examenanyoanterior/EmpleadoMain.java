@@ -10,24 +10,14 @@ import java.util.Scanner;
  */
 public class EmpleadoMain {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		// RELLERNAR CONSTRUCTOR WMPLEADO
-		String nombre;
-		String apellidos;
-		String nombreNuevo;
-		String apellidosNuevo;
-		String sexo;
+		Scanner scanner = extracted();
+
 		int seleccionMenuy = 0;
-	
-		
+
 		System.out.println("hola: ");
-		// TODO Auto-generated method stub
+
 		while (seleccionMenuy != 5) {
-		
 
 			System.out.println("1 Añadir empleado: ");
 
@@ -38,52 +28,94 @@ public class EmpleadoMain {
 			System.out.println("4 Eliminar empleado: ");
 
 			System.out.println("5 Salir:  ");
+
 			seleccionMenuy = scanner.nextInt();
 			switch (seleccionMenuy) {
 
 			case 1:
-				System.out.println("nombre: ");
-				nombre = scanner.next();
-				System.out.println("apellidos: ");
-				apellidos = scanner.next();
-				System.out.println("sexo: ");
-				sexo = scanner.next();
-				ListadoEmpleados.añadirEmpleado(nombre, apellidos, sexo);
-
+				EmpleadoMain.añadirEmpleado();
 				break;
 			case 2:
-				System.out.println("Lista de empleados: ");
 				ListadoEmpleados.listarEmpleados();
 				break;
 			case 3:
-				System.out.println("nombre: ");
-				nombre = scanner.next();
-				System.out.println("apellidos: ");
-				apellidos = scanner.next();
-				System.out.println("nombreNuevo: ");
-				nombreNuevo = scanner.next();
-				System.out.println("apellidosNuevo: ");
-				apellidosNuevo = scanner.next();
-				System.out.println("sexo: ");
-				sexo = scanner.next();
-				ListadoEmpleados.modificarEmpleado(nombre, apellidos, nombreNuevo, apellidosNuevo, sexo);
+				EmpleadoMain.modificarEmpleado();
 				break;
 			case 4:
-				System.out.println("nombre: ");
-				nombre = scanner.next();
-				System.out.println("apellidos: ");
-				apellidos = scanner.next();
-				ListadoEmpleados.eliminarEmpleado(nombre, apellidos);
+				EmpleadoMain.eliminarEmpleado();
 				break;
-			case 5:
-			
-			
-				break;
-			
+
+			}
 		}
-		}
-		System.out.print("Ha salido ");
+		System.out.print("Ha salido...");
 		scanner.close();
+	}
+
+	/**
+	 * 
+	 */
+	private static void eliminarEmpleado() {
+		String nombre;
+		String apellidos;
+		String sexo;
+		System.out.println("nombre: ");
+		nombre = extracted().next();
+		System.out.println("apellidos: ");
+		apellidos = extracted().next();
+		System.out.println("sexo: ");
+		sexo = extracted().next();
+		ListadoEmpleados.eliminarEmpleado(nombre, apellidos, sexo);
+		System.out.println("La verificacion es: " + ListadoEmpleados.eliminarEmpleado(nombre, apellidos, sexo));
+	}
+
+	/**
+	 * 
+	 */
+	private static void modificarEmpleado() {
+		String nombreNuevo;
+		String apellidosNuevo;
+		String nombre;
+		String apellidos;
+		String sexo;
+		System.out.println("nombre: ");
+		nombre = extracted().next();
+		System.out.println("apellidos: ");
+		apellidos = extracted().next();
+		System.out.println("nombreNuevo: ");
+		nombreNuevo = extracted().next();
+		System.out.println("apellidosNuevo: ");
+		apellidosNuevo = extracted().next();
+		System.out.println("sexo: ");
+		sexo = extracted().next();
+		ListadoEmpleados.modificarEmpleado(nombre, apellidos, nombreNuevo, apellidosNuevo, sexo);
+		System.out.println("La verificacion es: "
+				+ ListadoEmpleados.modificarEmpleado(nombre, apellidos, nombreNuevo, apellidosNuevo, sexo));
+	}
+
+	/**
+	 * 
+	 */
+	private static void añadirEmpleado() {
+		// TODO Auto-generated method stub
+		String nombre;
+		String apellidos;
+		String sexo;
+		System.out.println("nombre: ");
+		nombre = extracted().next();
+		System.out.println("apellidos: ");
+		apellidos = extracted().next();
+		System.out.println("sexo: ");
+		sexo = extracted().next();
+		ListadoEmpleados.añadirEmpleado(nombre, apellidos, sexo);
+		System.out.println("La verificacion es: " + ListadoEmpleados.añadirEmpleado(nombre, apellidos, sexo));
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	private static Scanner extracted() {
+		return new Scanner(System.in);
 	}
 
 }
