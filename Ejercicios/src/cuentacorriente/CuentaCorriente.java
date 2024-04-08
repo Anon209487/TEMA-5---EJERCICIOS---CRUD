@@ -22,9 +22,43 @@ public class CuentaCorriente {
 	}
 
 	public CuentaCorriente(String dni, String nombre, double saldoInicial) {
-		this.dni = dni;
-		this.nombre = nombre;
-		this.saldoInicial = saldoInicial;
+		setDni(dni);
+		setNombre(nombre);
+		setSaldoInicial(saldoInicial);
+
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	private void setDni(String dni) {
+		if (dni != null) {
+			this.dni = dni;
+		}
+
+	}
+
+	public String getNombre() {
+		return nombre;
+
+	}
+
+	public void setNombre(String nombre) {
+		if (nombre != null) {
+			this.nombre = nombre;
+		}
+
+	}
+
+	public double getSaldoInicial() {
+		return saldoInicial;
+	}
+
+	public void setSaldoInicial(double saldoInicial) {
+		if (saldoInicial > 0) {
+			this.saldoInicial = saldoInicial;
+		}
 
 	}
 
@@ -45,30 +79,6 @@ public class CuentaCorriente {
 	public String toString() {
 		String mostrarDatoS = " dni: " + this.dni + " nombre: " + this.nombre + " saldoInicial: " + this.saldoInicial;
 		return mostrarDatoS;
-	}
-
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public double getSaldoInicial() {
-		return saldoInicial;
-	}
-
-	public void setSaldoInicial(double saldoInicial) {
-		this.saldoInicial = saldoInicial;
 	}
 
 }

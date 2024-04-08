@@ -4,12 +4,8 @@ import java.util.Scanner;
 
 public class CuentaCorrienteMain {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = extracted();
 		int seleccion = 0;
-		String dni;
-		String nombre;
-		double saldoInicial;
-		double importe;
 		while (seleccion != 6) {
 			System.out.println("------------------------");
 			System.out.println("- 1 Listado            -");
@@ -18,37 +14,24 @@ public class CuentaCorrienteMain {
 			System.out.println("- 4 sacarDinero        -");
 			System.out.println("- 5 ingresarDinero     -");
 			System.out.println("- 6 Salir              -");
-			System.out.println("- escoja opcion        -");     
+			System.out.println("- escoja opcion        -");
 			System.out.println("------------------------");
 			seleccion = sc.nextInt();
 			switch (seleccion) {
 			case 1:
 				CuentaCorrienteArray.listarEmpleados();
 				break;
-
 			case 2:
-				System.out.println("escoja dni,nombre,saldoInicial:");
-				dni = sc.next();
-				nombre = sc.next();
-				saldoInicial = sc.nextDouble();
-				CuentaCorrienteArray.nuevoCuenta(dni, nombre, saldoInicial);
+				CuentaCorrienteMain.nuevoCuenta();
 				break;
 			case 3:
-				System.out.println("escoja dni:");
-				dni = sc.next();
-				CuentaCorrienteArray.eliminarCuenta(dni);
+				CuentaCorrienteMain.eliminarCuenta();
 				break;
 			case 4:
-				System.out.println("importe, dni:");
-				importe = sc.nextDouble();
-				dni = sc.next();
-				CuentaCorrienteArray.sacarDinero(importe, dni);
+				CuentaCorrienteMain.sacarDinero();
 				break;
 			case 5:
-				System.out.println("importe, dni:");
-				importe = sc.nextDouble();
-				dni = sc.next();
-				CuentaCorrienteArray.ingresarDinero(importe, dni);
+				CuentaCorrienteMain.ingresarDinero();
 				break;
 			case 6:
 				System.out.println("Ha salido del programa:");
@@ -57,5 +40,50 @@ public class CuentaCorrienteMain {
 
 		}
 		sc.close();
+	}
+
+	private static void nuevoCuenta() {
+		// TODO Auto-generated method stub
+		double saldoInicial;
+		String dni;
+		String nombre;
+		System.out.println("escoja dni,nombre,saldoInicial:");
+		dni = extracted().next();
+		nombre = extracted().next();
+		saldoInicial = extracted().nextDouble();
+		CuentaCorrienteArray.nuevoCuenta(dni, nombre, saldoInicial);
+	}
+
+	private static void ingresarDinero() {
+		// TODO Auto-generated method stub
+		double importe;
+		String dni;
+		System.out.println("importe, dni:");
+		importe = extracted().nextDouble();
+		dni = extracted().next();
+		CuentaCorrienteArray.ingresarDinero(importe, dni);
+	}
+
+	private static Scanner extracted() {
+		return new Scanner(System.in);
+	}
+
+	private static void sacarDinero() {
+		// TODO Auto-generated method stub
+		double importe;
+		String dni;
+		System.out.println("importe, dni:");
+		importe = extracted().nextDouble();
+		dni = extracted().next();
+		CuentaCorrienteArray.sacarDinero(importe, dni);
+	}
+
+	private static void eliminarCuenta() {
+		// TODO Auto-generated method stub
+		System.out.println("escoja dni:");
+		String dni;
+		dni = extracted().next();
+		CuentaCorrienteArray.eliminarCuenta(dni);
+
 	}
 }

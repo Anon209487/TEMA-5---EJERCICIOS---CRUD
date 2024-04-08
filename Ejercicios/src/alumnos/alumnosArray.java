@@ -1,7 +1,5 @@
 package alumnos;
 
-import java.util.Arrays;
-
 public class alumnosArray {
 
 	static public Alumno Alumnos[] = new Alumno[29];
@@ -21,10 +19,9 @@ public class alumnosArray {
 
 	public static void Listado() {
 		for (int i = 0; i < Alumnos.length; i++) {
-			
-		System.out.println(alumnosArray.Alumnos[i] );
 
-			
+			System.out.println(alumnosArray.Alumnos[i]);
+
 		}
 	}
 

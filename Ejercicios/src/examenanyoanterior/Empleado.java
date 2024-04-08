@@ -16,6 +16,12 @@ public class Empleado {
 
 	}
 
+	public Empleado(String nombre, String apellidos) {
+		setNombre(nombre);
+		setApellidos(apellidos);
+
+	}
+
 	public Empleado(String nombre, String apellidos, String sexo) {
 		setNombre(nombre);
 		setApellidos(apellidos);
@@ -35,7 +41,7 @@ public class Empleado {
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
-		if (nombre != null && nombre != "") {
+		if (nombre != null && !nombre.equals("")) {
 			this.nombre = nombre;
 		}
 
@@ -55,7 +61,7 @@ public class Empleado {
 	 */
 	public void setApellidos(String apellidos) {
 
-		if (apellidos != null && apellidos != "") {
+		if (apellidos != null && !apellidos.equals("")) {
 			this.apellidos = apellidos;
 		}
 	}
@@ -74,7 +80,7 @@ public class Empleado {
 	 */
 	public void setSexo(String sexo) {
 
-		if (sexo != null && sexo != "") {
+		if (sexo != null && !sexo.equals("")) {
 			this.sexo = sexo;
 		}
 	}

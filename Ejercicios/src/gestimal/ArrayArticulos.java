@@ -1,7 +1,5 @@
 package gestimal;
 
-import java.util.Arrays;
- 
 public class ArrayArticulos {
 
 	static Articulos articulos[] = new Articulos[49];
@@ -9,7 +7,7 @@ public class ArrayArticulos {
 	public static void nuevoPedido(int codigo, double precioVenta, double precioCompra, String descripcion, int stock) {
 		int i = 0;
 
-		while (ArrayArticulos.articulos[i] != null && i < 50) {
+		while (ArrayArticulos.articulos[i] != null && i < articulos.length) {
 			i++;
 
 		}
@@ -19,20 +17,26 @@ public class ArrayArticulos {
 		}
 	}
 
-	public static void EntradaMercancía(int cantidadEntrada, int posicionArticulo) {
+	public static void EntradaMercancía(int cantidadEntrada, int codigo) {
 
-		articulos[posicionArticulo].entradaMercancia(cantidadEntrada);
+		articulos[codigo].entradaMercancia(cantidadEntrada);
 
 	}
 
-	public static void salidaMercancia(int cantidadSalida, int posicionArticulo) {
+	public static void salidaMercancia(int cantidadSalida, int codigo) {
 
-		articulos[posicionArticulo].SalidaMercancía(cantidadSalida);
+		articulos[codigo].SalidaMercancía(cantidadSalida);
 
 	}
 
 	public static void Listado() {
-		Arrays.toString(articulos);
+		for (int i = 0; i < articulos.length; i++) {
+			if (articulos[i] != null) {
+				System.out.println(articulos[i]);
+			}
+
+		}
+
 	}
 
 	public static void baja(int posicionArticulo) {
@@ -42,22 +46,14 @@ public class ArrayArticulos {
 
 	public static void modificarArticulo(int posicionArticulo, int codigo, double precioVenta, double precioCompra,
 			String descripcion, int stock) {
-		if (descripcion != null && descripcion != "") {
-			articulos[posicionArticulo].setDescripcion(descripcion);
-		}
-		if (codigo > 0) {
-			articulos[posicionArticulo].setCodigo(codigo);
-		}
-		if (precioVenta > 0) {
-			articulos[posicionArticulo].setPrecioVenta(precioVenta);
-		}
-		if (precioCompra > 0) {
-			articulos[posicionArticulo].setPrecioCompra(precioCompra);
-		}
 
-		if (stock > 0) {
-			articulos[posicionArticulo].setstock(stock);
-		}
+		articulos[posicionArticulo].setDescripcion(descripcion);
+
+		articulos[posicionArticulo].setPrecioVenta(precioVenta);
+
+		articulos[posicionArticulo].setPrecioCompra(precioCompra);
+
+		articulos[posicionArticulo].setstock(stock);
 
 	}
 }

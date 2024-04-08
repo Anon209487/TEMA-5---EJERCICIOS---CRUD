@@ -57,15 +57,12 @@ public class EmpleadoMain {
 	private static void eliminarEmpleado() {
 		String nombre;
 		String apellidos;
-		String sexo;
 		System.out.println("nombre: ");
 		nombre = extracted().next();
 		System.out.println("apellidos: ");
 		apellidos = extracted().next();
-		System.out.println("sexo: ");
-		sexo = extracted().next();
-		ListadoEmpleados.eliminarEmpleado(nombre, apellidos, sexo);
-		System.out.println("La verificacion es: " + ListadoEmpleados.eliminarEmpleado(nombre, apellidos, sexo));
+		ListadoEmpleados.eliminarEmpleado(nombre, apellidos);
+
 	}
 
 	/**
@@ -88,8 +85,7 @@ public class EmpleadoMain {
 		System.out.println("sexo: ");
 		sexo = extracted().next();
 		ListadoEmpleados.modificarEmpleado(nombre, apellidos, nombreNuevo, apellidosNuevo, sexo);
-		System.out.println("La verificacion es: "
-				+ ListadoEmpleados.modificarEmpleado(nombre, apellidos, nombreNuevo, apellidosNuevo, sexo));
+
 	}
 
 	/**
@@ -107,7 +103,7 @@ public class EmpleadoMain {
 		System.out.println("sexo: ");
 		sexo = extracted().next();
 		ListadoEmpleados.añadirEmpleado(nombre, apellidos, sexo);
-		System.out.println("La verificacion es: " + ListadoEmpleados.añadirEmpleado(nombre, apellidos, sexo));
+
 	}
 
 	/**

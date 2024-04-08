@@ -33,7 +33,7 @@ public class CuentaCorrienteArray {
 	}
 
 	public static void sacarDinero(double cantidad, String dni) {
-		for (int j = 0; j <  cuentas.length; j++) {
+		for (int j = 0; j < cuentas.length; j++) {
 			if (cuentas[j] != null && cuentas[j].getDni().equals(dni)) {
 				cuentas[j].sacarDinero(cantidad);
 
@@ -42,7 +42,7 @@ public class CuentaCorrienteArray {
 	}
 
 	public static void eliminarCuenta(String dni) {
-		for (int j = 0; j <  cuentas.length; j++) {
+		for (int j = 0; j < cuentas.length; j++) {
 			if (cuentas[j] != null && cuentas[j].getDni().equals(dni)) {
 				cuentas[j] = null;
 
@@ -51,7 +51,7 @@ public class CuentaCorrienteArray {
 	}
 
 	public static void ingresarDinero(double cantidad, String dni) {
-		for (int j = 0; j <  cuentas.length; j++) {
+		for (int j = 0; j < cuentas.length; j++) {
 			if (cuentas[j] != null && cuentas[j].getDni().equals(dni)) {
 				cuentas[j].Ingresardinero(cantidad);
 

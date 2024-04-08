@@ -1,5 +1,5 @@
 package gestimal;
- 
+
 /**
  * FUNCION OBJETO
  */
@@ -16,29 +16,70 @@ public class Articulos {
 	}
 
 	public Articulos(int codigo, double precioVenta, double precioCompra, String descripcion, int stock) {
-		if (!"".equals(descripcion) && descripcion != null) {
-			this.descripcion = descripcion;
-		}
-		if (codigo > 0) {
-			this.codigo = codigo;
-		}
-		if (precioVenta > 0) {
-			this.precioVenta = precioVenta;
-		}
+		setDescripcion(descripcion);
+
+		setCodigo(codigo);
+
+		setPrecioVenta(precioVenta);
+
+		setPrecioCompra(precioCompra);
+
+		setstock(stock);
+
+	}
+
+	public double getPrecioCompra() {
+		return precioCompra;
+	}
+
+	public void setPrecioCompra(double precioCompra) {
 		if (precioCompra > 0) {
 			this.precioCompra = precioCompra;
 		}
+	}
 
-		if (stock > 0) {
-			this.stock = stock;
+	public int getCodigo() {
+		return codigo;
+	}
+
+	private void setCodigo(int codigo) {
+
+		if (codigo > 0) {
+			this.codigo = codigo;
+		}
+	}
+
+	public double getPrecioVenta() {
+		return precioVenta;
+
+	}
+
+	public void setPrecioVenta(double precioVenta) {
+		if (precioVenta > 0) {
+			this.precioVenta = precioVenta;
 		}
 
 	}
 
-	public String toString() {
-		return (this.codigo + " " + this.precioVenta + " " + this.precioCompra + " " + this.descripcion + " "
-				+ this.stock);
+	public String getDescripcion() {
+		return descripcion;
+	}
 
+	public void setDescripcion(String descripcion) {
+		if (!"".equals(descripcion) && descripcion != null) {
+			this.descripcion = descripcion;
+		}
+
+	}
+
+	public void setstock(int Stock) {
+		if (stock > 0) {
+			this.stock = Stock;
+		}
+	}
+
+	public int getstock() {
+		return stock;
 	}
 
 	public int entradaMercancia(int cantidadEntrada) {
@@ -58,43 +99,15 @@ public class Articulos {
 		return nuevoStock;
 	}
 
-	public double getPrecioCompra() {
-		return precioCompra;
+	public String toString() {
+		return (this.codigo + " " + this.precioVenta + " " + this.precioCompra + " " + this.descripcion + " "
+				+ this.stock);
+
 	}
 
-	public void setPrecioCompra(double precioCompra) {
-		this.precioCompra = precioCompra;
-	}
+	public boolean equals(Object obj) {
+		Articulos ArticulosComparacion = (Articulos) obj;
+		return this.codigo == ArticulosComparacion.getCodigo();
 
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-
-	public double getPrecioVenta() {
-		return precioVenta;
-	}
-
-	public void setPrecioVenta(double precioVenta) {
-		this.precioVenta = precioVenta;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public void setstock(int Stock) {
-		this.stock = Stock;
-	}
-
-	public int getstock() {
-		return stock;
 	}
 }
