@@ -89,7 +89,11 @@ public class Empleado {
 	 * 
 	 */
 	public String toString() {
-		return " nombre: " + apellidos + " apellidos: " + nombre + " sexo: " + sexo;
+		String res = " ";
+		res += "Nombre: " + nombre + "\n";
+		res += "Apellidos: " + apellidos + "\n";
+		res += "Sexo: " + sexo + "\n";
+		return res;
 
 	}
 
@@ -97,9 +101,13 @@ public class Empleado {
 	 * 
 	 */
 	public boolean equals(Object obj) {
+		boolean res = false;
 		Empleado empleadoComparacion = (Empleado) obj;
-		return this.getNombre().equals(empleadoComparacion.getNombre())
-				&& this.getApellidos().equals(empleadoComparacion.getNombre());
+		if (nombre.equals(empleadoComparacion.nombre) && apellidos.equals(empleadoComparacion.apellidos)) {
+			res = true;
+		}
+
+		return res;
 
 	}
 

@@ -7,7 +7,7 @@ package examenanyoanterior;
  * 
  */
 public class ListadoEmpleados {
-	public static Empleado[] listaEmpleados = new Empleado[9];
+	public static Empleado[] listaEmpleados = new Empleado[10];
 	public static int posicionLibre;
 
 	/**
@@ -35,7 +35,7 @@ public class ListadoEmpleados {
 		Empleado empleadoHaAnyadir = new Empleado(nombre, apellidos);
 		boolean verificacionEmpleadoAnyadido = verificarEmpleado(empleadoHaAnyadir, nombre, apellidos);
 		int i = 0;
-		while (listaEmpleados[i] != null || i > listaEmpleados.length) {
+		while (listaEmpleados[i] != null || i < listaEmpleados.length) {
 			i++;
 		}
 		if (listaEmpleados[i] == null && verificacionEmpleadoAnyadido == false) {
