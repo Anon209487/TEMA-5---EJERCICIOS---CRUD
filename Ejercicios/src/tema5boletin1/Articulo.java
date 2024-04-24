@@ -40,4 +40,5 @@ public class Articulo {
 		String mostrarDatoS = this.nombre + this.precio + this.cuantosQuedan;
 		return mostrarDatoS;
 	}
+	
 }
